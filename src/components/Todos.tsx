@@ -1,24 +1,19 @@
 import {useEffect, useState} from "react";
 import {ITodo} from "../models/ITodo.ts";
-import { Todo } from "./todo/Todo.tsx";
+import {Todo} from "./todo/Todo.tsx";
+import {getAllTodos} from "../services/api.services.ts";
 
 export const Todos = () =>{
 
     const [todos, setTodos] = useState<ITodo[]>([])
 
     useEffect(() => {
-        fetch(
-            'https://jsonplaceholder.typicode.com/todos'
-        )
-            .then(value => value.json())
-            .then((iTodos: ITodo[]) => {
-                setTodos(iTodos)
-            })
-            }, []);
+        getAllTodos().then(({ todos }) => setTodos(todos))
+    }, []);
     return(
         <>
             {
-            todos.map(todo=><Todo key={todo.id} item={todo}></Todo>)
+            todos.map(todo=><Todo key={todo.id} item={todo}/>)
             }
         </>
     )
