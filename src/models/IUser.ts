@@ -3,6 +3,7 @@ export interface IUser {
     username: string;
     lat: number;
     lng: number;
+    email:string;
 }
 
 export interface Address {
