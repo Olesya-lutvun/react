@@ -1,12 +1,10 @@
 import { Outlet } from "react-router";
+import { MenuComponent } from "../components/menu/MenuComponent";
 
 
  export const MainLayout = () =>{
-    return(
-     <>
-         <div className={'main-layout'}>MainLayout</div>
-     <hr/>
+    return <div>
+    <MenuComponent/>
      <Outlet/>
-     </>
-    );
+     </div>
 };
