@@ -10,7 +10,7 @@ export const userService ={
 };
 export const cartService ={
     getCartsOfUser:async (userId:string): Promise<ICartResponseModel> =>{
-        return await fetch('https://dummyjson.com/carts/user'+ userId)
+        return await fetch('https://dummyjson.com/carts/user/'+ userId)
             .then(res => res.json())
     }
 };

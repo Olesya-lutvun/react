@@ -9,7 +9,7 @@ type Props ={
 export const UserComponent: FC<Props>= ({user}) => {
     const navigation = useNavigate();
     const onButtonClikNavigate = () =>{
-        navigation('/users/'+ user.id + 'carts')
+        navigation('/users/'+ user.id + '/carts/')
     }
     return <div className={"my-5"}>
         {user.username}:{user.email}
