@@ -16,7 +16,8 @@ export const UsersComponent = () => {
 
        const currentPage = searchParams.get('page') || '1';
        getUsers(currentPage).then(({users}:IUserResponse) =>{
-           setUsers(users)
+
+           setUsers(users);
        })
 
     }, [searchParams]);
@@ -25,7 +26,7 @@ export const UsersComponent = () => {
         <div>
             {
                 users.map((user: IUser) => (
-                    <UserComponent key={user.id} user={user}/>))
+                    <UserComponent user={user} key={user.id} />))
             }
 
         </div>
