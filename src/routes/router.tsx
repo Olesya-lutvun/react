@@ -1,14 +1,17 @@
 import {createBrowserRouter } from "react-router";
 
-import { UsersPage } from "../pages/UsersPage";
 import { MainLayout } from "../layaut/MainLayouyComponent";
+import { PaginationLayaut } from "../layaut/PaginationLayaut";
+import { UsersPage } from "../pages/UsersPage";
 
 
 export const routes = createBrowserRouter ([
     {
         path: "/",
         element: <MainLayout/>,children:[
-            {path: 'users', element: <UsersPage/>},
+            {path:'', element: <PaginationLayaut/>, children:[
+                    {path:'users', element: <UsersPage/>}
+                ]},
         ]
     },
 ]);

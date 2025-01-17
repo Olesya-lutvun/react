@@ -7,7 +7,11 @@ export const PaginationComponent = () =>{
     return(
         <div>
             <button onClick={() => {
-                setSearchParams ({page: (--currentPage).toString()});
+
+                if (currentPage>=1) {
+
+                    setSearchParams({page: (--currentPage).toString()});
+                }
             }}> prev</button>
 
             <button onClick={() => {
