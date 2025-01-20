@@ -19,15 +19,15 @@ export const CreateCarPage = () => {
     return (
         <form onSubmit={handleSubmit(createHendler)}>
             <div>
-                <input type="text"{...register('brand')}/>
+                <input type="text" {...register('brand')}/>
                 <div>{errors.brand?.message}</div>
             </div>
             <div>
-                <input type="number"{...register('prise')}/>
-                <div>{errors.prise?.message}</div>
+                <input type="number" {...register('price')}/>
+                <div>{errors.price?.message}</div>
             </div>
             <div>
-                <input type="number"{...register('year')}/>
+                <input type="number" {...register('year')}/>
                 <div>{errors.year?.message}</div>
             </div>
             <button>save car</button>

@@ -7,13 +7,13 @@ headers:{'Content-Type':'application/json'}
 });
 
 export const getCars = async ():Promise<ICar[]> => {
-    const axiosResponse = await axiosInstance.get<ICar[]>("/car");
+    const axiosResponse = await axiosInstance.get<ICar[]>("/cars");
     console.log(axiosResponse)
     const cars = axiosResponse.data;
     console.log(cars)
     return cars;
 }
 
-export const addCar = async (car: ICar) =>{
+export const addCar = async (car: ICar):Promise<void> => {
      await axiosInstance.post("/cars", car)
 }
