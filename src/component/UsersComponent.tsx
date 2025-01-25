@@ -1,10 +1,15 @@
-import {useCallback, useEffect, useState} from "react"; ////Импортирует хук из библиотеки React///
+import {useCallback, useEffect, useMemo, useState} from "react"; ////Импортирует хук из библиотеки React///
 import {UserComponent} from "./UserComponent";
 
 export const UsersComponent = () => { ///Объявляется функциональный компонет///
     console.log('users')
 
     const [users, setUsers] = useState([]) ///функция, с помощью которой можно обновить состояние///
+
+    const arr: number[] = useMemo(() => {
+        return [11, 22, 23]
+    }, []);/// оптимизирует  значение, чтобы оно не пересчитывалось при каждом рендере.оптимизация, которая
+    // предотвращает ненужные вычисления и рендеры///
 
     const foo = useCallback(() => { /// мемоизирует функцию, чтобы она не
         // создавалась заново при каждом рендере компонента.///
@@ -25,7 +30,7 @@ export const UsersComponent = () => { ///Объявляется функцион
     }, []);
     return (
         <>users component
-            <UserComponent foo={foo}/>
+            <UserComponent foo={foo} arr={arr}/>
         </>
     )///foo передается в UsersComponent, позволяя дочернему компоненту использовать эту функцию ///
 }
