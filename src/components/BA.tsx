@@ -1,16 +1,16 @@
-import { useContext } from "react"
-import { MyContext } from "../context/MyContextProvider"
+import {useContext} from "react"
+import {MyContext} from "../context/MyContextProvider"
 
 export const BA = () => {
 
     const {changeTheme} = useContext(MyContext)
-    const handlerDark =()=>{
-       changeTheme('dark')
+    const handlerDark = () => {
+        changeTheme('dark')
     }
-    const handlerLight =()=>{
+    const handlerLight = () => {
         changeTheme('light')
     }
-    return(
+    return (
         <div>
             <button onClick={handlerDark}>change theme to dark</button>
             <button onClick={handlerLight}>change theme to light</button>

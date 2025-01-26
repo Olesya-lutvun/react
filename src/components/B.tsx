@@ -1,4 +1,4 @@
-import { BA } from "./BA"
+import {BA} from "./BA"
 
 export const B = () => {
     return (

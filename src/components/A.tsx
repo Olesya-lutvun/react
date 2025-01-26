@@ -1,7 +1,7 @@
-import { AA } from "./AA"
+import {AA} from "./AA"
 
 export const A = () => {
-    return(
+    return (
         <div>
             <AA/>
         </div>
