@@ -1,14 +1,25 @@
-
+import {useFetch} from "./hooks/useFetch"
 import './App.css'
-import { UsersComponent } from './component/UsersComponent'
 
 function App() {
-  console.log('app')
-  return (
-    <>
-          <UsersComponent/>
-    </>
-  )
+    const users =
+        useFetch<{ id: number, name: string }[]>('https://jsonplaceholder.typecode.com/users')
+    return (
+        <>
+            {
+                users &&
+                users.map((user: { id: number, name: string }) => (
+                    <div key={user.id}>
+                        {user.id}:{user.name}
+
+
+                    </div>
+
+
+                ))
+            }
+        </>
+    )
 }
 
 export default App
