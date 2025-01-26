@@ -1,25 +1,27 @@
-import {useFetch} from "./hooks/useFetch"
+import { useState } from 'react';
 import './App.css'
+import { A } from './components/A'
+import { B } from './components/B'
+import { MyContext } from './context/MyContextProvider'
 
 function App() {
-    const users =
-        useFetch<{ id: number, name: string }[]>('https://jsonplaceholder.typecode.com/users')
-    return (
-        <>
-            {
-                users &&
-                users.map((user: { id: number, name: string }) => (
-                    <div key={user.id}>
-                        {user.id}:{user.name}
+    const [themeColor, setThemeColor] = useState<string>('light');
+   return(
 
-
-                    </div>
-
-
-                ))
+    <div>
+        <MyContext.Provider value={{
+            theme:themeColor,
+            changeTheme:(themeValue:string) =>{
+                setThemeColor(themeValue)
+                
             }
-        </>
-    )
+        }}>
+        <A/>
+        <B/>
+        </MyContext.Provider>
+    </div>
+
+   )
 }
 
 export default App
