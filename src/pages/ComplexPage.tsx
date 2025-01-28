@@ -1,8 +1,8 @@
 import {useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "../redux/store"
-import {userAction} from "../slices/UserSlice";
-import {postAction} from "../slices/PosrSlice";
-import {commentAction} from "../slices/CommentSlice";
+import { userAction } from "../redux/slices/UserSlice";
+import { postAction } from "../redux/slices/PosrSlice";
+import { commentAction } from "../redux/slices/CommentSlice";
 
 export const ComplexPage = () => {
     const dicpatch = useAppDispatch()
@@ -21,7 +21,7 @@ export const ComplexPage = () => {
         if (!comments.length) {
             dicpatch(commentAction.loadComment());
         }
-    }, []);
+    }, [users, posts, comments]);
     return (
         <></>
     )

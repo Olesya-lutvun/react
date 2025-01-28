@@ -1,6 +1,6 @@
 import {PayloadAction, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IUser} from "../model/IUser";
-import {getAll} from "../services/api.service";
+import {IUser} from "../../model/IUser";
+import {getAll} from "../../services/api.service";
 
 type UserSliceType = {
     users: IUser[]

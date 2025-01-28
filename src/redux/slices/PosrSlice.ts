@@ -1,6 +1,6 @@
 import {PayloadAction, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IPost} from "../model/IPost";
-import {getAll} from "../services/api.service";
+import {IPost} from "../../model/IPost";
+import {getAll} from "../../services/api.service";
 
 type PostSliceType = {
     posts: IPost[]

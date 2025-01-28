@@ -1,6 +1,6 @@
 import {PayloadAction, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IComment} from "../model/IComment";
-import {getAll} from "../services/api.service";
+import {IComment} from "../../model/IComment";
+import {getAll} from "../../services/api.service";
 
 type CommentSliceType = {
     comments: IComment[]
@@ -8,7 +8,7 @@ type CommentSliceType = {
 const initCommentSliceState: CommentSliceType = {comments: []}
 
 const loadComment = createAsyncThunk('loadComments', async (_, thunkAPI) => {
-    const comments = await getAll<IComment[]>('/coments');
+    const comments = await getAll<IComment[]>('/comments');
     console.log(comments)
     return thunkAPI.fulfillWithValue(comments);
 
